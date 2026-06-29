@@ -1,0 +1,234 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: #2f2a24;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.78), rgba(245, 248, 237, 0.88)),
+    url("https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?auto=format&fit=crop&w=1600&q=80");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+.app {
+  width: min(920px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.hero {
+  padding: 40px 0 28px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #547044;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.1rem, 7vw, 4.5rem);
+  line-height: 1;
+}
+
+.lead {
+  max-width: 680px;
+  margin: 18px 0 0;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.diagnosis-form,
+.result {
+  border: 1px solid rgba(84, 112, 68, 0.24);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 18px 44px rgba(47, 42, 36, 0.12);
+}
+
+.diagnosis-form {
+  display: grid;
+  gap: 18px;
+  padding: 24px;
+}
+
+fieldset {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 18px;
+  border: 1px solid #d9decf;
+  border-radius: 8px;
+}
+
+legend {
+  padding: 0 8px;
+  font-weight: 700;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #547044;
+}
+
+button {
+  width: min(100%, 320px);
+  min-height: 48px;
+  border: 0;
+  border-radius: 8px;
+  color: #ffffff;
+  background: #547044;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #435b36;
+}
+
+.secondary-button {
+  width: auto;
+  min-height: 42px;
+  margin-top: 20px;
+  padding: 0 18px;
+  border: 1px solid #547044;
+  color: #435b36;
+  background: #ffffff;
+}
+
+.secondary-button:hover {
+  color: #ffffff;
+  background: #547044;
+}
+
+.result {
+  margin-top: 24px;
+  padding: 24px;
+}
+
+.result h2 {
+  margin: 0 0 8px;
+  font-size: 1.8rem;
+}
+
+.brand {
+  color: #547044;
+}
+
+.score {
+  display: inline-flex;
+  margin: 6px 0 0;
+  padding: 6px 10px;
+  border-radius: 999px;
+  color: #435b36;
+  background: #f1f6e8;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.reason {
+  margin: 16px 0 0;
+  line-height: 1.8;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.tag {
+  padding: 6px 10px;
+  border-radius: 999px;
+  color: #435b36;
+  background: #edf3e7;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.selected-answers {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid #d9decf;
+}
+
+.selected-answers h3 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+}
+
+.selected-answers ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.selected-answers li {
+  padding: 6px 10px;
+  border: 1px solid #d9decf;
+  border-radius: 8px;
+  background: #ffffff;
+  font-size: 0.92rem;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 520px) {
+  .app {
+    width: min(100% - 24px, 920px);
+    padding: 24px 0;
+  }
+
+  .hero {
+    padding-top: 24px;
+  }
+
+  .diagnosis-form,
+  .result {
+    padding: 18px;
+  }
+
+  fieldset {
+    padding: 16px;
+  }
+
+  button,
+  .secondary-button {
+    width: 100%;
+  }
+}
+
+@media (min-width: 760px) {
+  .diagnosis-form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  button {
+    grid-column: 1 / -1;
+  }
+}

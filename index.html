@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お米診断</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <section class="hero">
+      <p class="eyebrow">Okome Shindan</p>
+      <h1>好みのお米診断</h1>
+      <p class="lead">
+        甘さ・柔らかさ・粘り・香りの好みから、あなたに合いそうなお米の銘柄をおすすめします。
+      </p>
+    </section>
+
+    <form id="diagnosis-form" class="diagnosis-form">
+      <fieldset>
+        <legend>甘さの好み</legend>
+        <label><input type="radio" name="sweetness" value="high" required> 甘みが強い</label>
+        <label><input type="radio" name="sweetness" value="middle"> ほどよい甘み</label>
+        <label><input type="radio" name="sweetness" value="low"> すっきり控えめ</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>食感の好み</legend>
+        <label><input type="radio" name="texture" value="soft" required> 柔らかめ</label>
+        <label><input type="radio" name="texture" value="balanced"> ふつう</label>
+        <label><input type="radio" name="texture" value="firm"> かため</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>粘りの好み</legend>
+        <label><input type="radio" name="stickiness" value="strong" required> もっちり粘る</label>
+        <label><input type="radio" name="stickiness" value="middle"> ほどよい粘り</label>
+        <label><input type="radio" name="stickiness" value="light"> あっさり軽い</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>香りの好み</legend>
+        <label><input type="radio" name="aroma" value="rich" required> 香りをしっかり感じたい</label>
+        <label><input type="radio" name="aroma" value="gentle"> やさしい香りが好き</label>
+        <label><input type="radio" name="aroma" value="clean"> クセが少ない方が好き</label>
+      </fieldset>
+
+      <button type="submit">診断する</button>
+    </form>
+
+    <section id="result" class="result hidden" aria-live="polite"></section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
