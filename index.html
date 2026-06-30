@@ -12,40 +12,27 @@
       <p class="eyebrow">Okome Shindan</p>
       <h1>好みのお米診断</h1>
       <p class="lead">
-        甘さ・柔らかさ・粘り・香りの好みから、あなたに合いそうなお米の銘柄をおすすめします。
+        甘さ・柔らかさ・粘り・香りの好みから、8つのお米の中であなたに合いそうな銘柄をおすすめします。
       </p>
     </section>
 
-    <form id="diagnosis-form" class="diagnosis-form">
-      <fieldset>
-        <legend>甘さの好み</legend>
-        <label><input type="radio" name="sweetness" value="high" required> 甘みが強い</label>
-        <label><input type="radio" name="sweetness" value="middle"> ほどよい甘み</label>
-        <label><input type="radio" name="sweetness" value="low"> すっきり控えめ</label>
-      </fieldset>
+    <form id="diagnosis-form" class="diagnosis-form" autocomplete="off">
+      <div class="progress">
+        <p id="question-count" class="question-count"></p>
+        <div class="progress-track" aria-hidden="true">
+          <div id="progress-bar" class="progress-bar"></div>
+        </div>
+      </div>
 
-      <fieldset>
-        <legend>食感の好み</legend>
-        <label><input type="radio" name="texture" value="soft" required> 柔らかめ</label>
-        <label><input type="radio" name="texture" value="balanced"> ふつう</label>
-        <label><input type="radio" name="texture" value="firm"> かため</label>
-      </fieldset>
+      <section class="question-panel">
+        <p id="question-category" class="eyebrow"></p>
+        <h2 id="question-title"></h2>
+        <div id="options" class="options"></div>
+      </section>
 
-      <fieldset>
-        <legend>粘りの好み</legend>
-        <label><input type="radio" name="stickiness" value="strong" required> もっちり粘る</label>
-        <label><input type="radio" name="stickiness" value="middle"> ほどよい粘り</label>
-        <label><input type="radio" name="stickiness" value="light"> あっさり軽い</label>
-      </fieldset>
-
-      <fieldset>
-        <legend>香りの好み</legend>
-        <label><input type="radio" name="aroma" value="rich" required> 香りをしっかり感じたい</label>
-        <label><input type="radio" name="aroma" value="gentle"> やさしい香りが好き</label>
-        <label><input type="radio" name="aroma" value="clean"> クセが少ない方が好き</label>
-      </fieldset>
-
-      <button type="submit">診断する</button>
+      <div class="form-actions">
+        <button type="button" class="secondary-button" id="back-button">前の質問へ</button>
+      </div>
     </form>
 
     <section id="result" class="result hidden" aria-live="polite"></section>
