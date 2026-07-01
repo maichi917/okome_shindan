@@ -20,7 +20,7 @@ body {
   margin: 0;
   min-height: 100vh;
   color: var(--ink);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: "Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background:
     linear-gradient(120deg, rgba(255, 253, 250, 0.94), rgba(246, 239, 224, 0.86)),
     url("https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?auto=format&fit=crop&w=1800&q=80");
@@ -143,11 +143,10 @@ h1 {
 
 .option-button {
   position: relative;
-  display: grid;
-  gap: 18px;
-  align-content: space-between;
+  display: flex;
+  align-items: center;
   width: 100%;
-  min-height: 132px;
+  min-height: 104px;
   padding: 20px;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -162,51 +161,11 @@ h1 {
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
-.option-index {
-  display: inline-grid;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  place-items: center;
-  color: var(--leaf-dark);
-  background: var(--rice);
-  font-size: 0.9rem;
-}
-
-.option-label {
-  display: block;
-  max-width: 80%;
-}
-
-.option-button::after {
-  position: absolute;
-  right: 16px;
-  bottom: 14px;
-  width: 22px;
-  height: 22px;
-  border: 1px solid #d5cab9;
-  border-radius: 50%;
-  background: var(--rice);
-  content: "";
-}
-
 .option-button:hover,
 .option-button.selected {
   border-color: var(--leaf);
   box-shadow: 0 16px 32px rgba(51, 39, 25, 0.14);
   transform: translateY(-2px);
-}
-
-.option-button:hover::after,
-.option-button.selected::after {
-  border-color: var(--leaf);
-  background: radial-gradient(circle, var(--leaf) 0 38%, var(--rice) 42%);
-}
-
-.option-button:hover .option-index,
-.option-button.selected .option-index {
-  color: #ffffff;
-  background: var(--leaf);
 }
 
 .form-actions {
@@ -401,7 +360,6 @@ button:disabled {
 
   .option-button {
     min-height: 72px;
-    padding-right: 54px;
   }
 
   .dish-list {

@@ -323,14 +323,11 @@ function renderQuestion() {
   optionsArea.innerHTML = "";
   backButton.disabled = currentQuestionIndex === 0;
 
-  question.options.forEach((option, index) => {
+  question.options.forEach((option) => {
     const button = document.createElement("button");
     button.type = "button";
     button.className = "option-button";
-    button.innerHTML = `
-      <span class="option-index">${index + 1}</span>
-      <span class="option-label">${option.label}</span>
-    `;
+    button.textContent = option.label;
 
     if (answers[question.key] === option.value) {
       button.classList.add("selected");
