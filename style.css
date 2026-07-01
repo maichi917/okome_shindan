@@ -231,6 +231,10 @@ h1 {
   background: #f6faf1;
 }
 
+.result .secondary-button {
+  margin-top: 28px;
+}
+
 button:disabled {
   cursor: not-allowed;
   opacity: 0.45;
@@ -307,11 +311,24 @@ button:disabled {
 }
 
 .dish-card {
+  display: grid;
+  grid-template-columns: 82px 1fr;
+  gap: 16px;
+  align-items: center;
   min-height: 132px;
   padding: 18px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: linear-gradient(135deg, #ffffff, #fff8ec);
+}
+
+.dish-visual {
+  display: block;
+  width: 82px;
+  height: 82px;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 10px 22px rgba(51, 39, 25, 0.1);
 }
 
 .dish-name {
@@ -389,6 +406,17 @@ button:disabled {
 
   .dish-list {
     grid-template-columns: 1fr;
+  }
+
+  .dish-card {
+    grid-template-columns: 70px 1fr;
+  }
+
+  .dish-visual {
+    width: 66px;
+    height: 66px;
+    transform: scale(0.86);
+    transform-origin: left center;
   }
 
   .secondary-button {
