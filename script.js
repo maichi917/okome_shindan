@@ -6,18 +6,20 @@ const riceBrands = [
     dishes: [
       {
         name: "おにぎり",
+        kind: "onigiri",
         reason: "冷めてももっちり感と甘みが残りやすく、具材なしでも満足感があります。",
       },
       {
-        name: "塩むすび",
-        reason: "お米の甘さが主役になるので、シンプルな食べ方と相性がよいです。",
+        name: "お弁当",
+        kind: "bento",
+        reason: "冷めても甘みともっちり感が残りやすく、お昼ごはんでも満足感があります。",
       },
     ],
     preferences: {
-      sweetness: "high",
-      texture: "soft",
-      stickiness: "strong",
-      aroma: "rich",
+      texture: "mochi",
+      sweetness: "sweet",
+      scene: "bento",
+      impression: "soft",
     },
   },
   {
@@ -27,39 +29,43 @@ const riceBrands = [
     dishes: [
       {
         name: "定食ごはん",
+        kind: "set-meal",
         reason: "甘みと粘りのバランスがよく、焼き魚や生姜焼きなど幅広いおかずに合います。",
       },
       {
         name: "卵かけごはん",
+        kind: "egg-rice",
         reason: "ほどよい粘りが卵となじみやすく、食べごたえが出ます。",
       },
     ],
     preferences: {
-      sweetness: "middle",
       texture: "balanced",
-      stickiness: "middle",
-      aroma: "gentle",
+      sweetness: "pairing",
+      scene: "washoku",
+      impression: "balanced",
     },
   },
   {
     name: "つや姫",
-    description: "粒立ちと上品な甘みがあり、すっきり食べたい日にも合います。",
-    tags: ["ほどよい甘み", "かため", "ほどよい粘り", "クセ少なめ"],
+    description: "つやのある炊きあがりと上品な甘みを、白ごはんとしてじっくり味わいたい人に向いています。",
+    tags: ["上品な甘み", "粒立ち", "ほどよい粘り", "白ごはん向き"],
     dishes: [
       {
-        name: "和食",
-        reason: "上品な甘みと粒立ちがあり、だしの風味や淡い味つけを邪魔しにくいです。",
+        name: "白ごはん",
+        kind: "rice-bowl",
+        reason: "つやと上品な甘みが持ち味なので、おかずに頼りすぎずごはん自体のおいしさを感じやすいです。",
       },
       {
         name: "炊き込みごはん",
-        reason: "粒感が残りやすく、具材やだしと合わせても食感を楽しめます。",
+        kind: "mixed-rice",
+        reason: "だしや具材の風味を受け止めながら、上品な甘みと粒感を楽しめます。",
       },
     ],
     preferences: {
-      sweetness: "middle",
-      texture: "firm",
-      stickiness: "middle",
-      aroma: "clean",
+      texture: "grain",
+      sweetness: "sweet",
+      scene: "washoku",
+      impression: "firm",
     },
   },
   {
@@ -69,18 +75,20 @@ const riceBrands = [
     dishes: [
       {
         name: "カレー",
+        kind: "curry",
         reason: "粒立ちがよく、ルーと合わせてもごはんの食感が残りやすいです。",
       },
       {
         name: "丼もの",
+        kind: "donburi",
         reason: "タレや具材を受け止めながら、べたつきにくく食べやすいです。",
       },
     ],
     preferences: {
-      sweetness: "low",
-      texture: "firm",
-      stickiness: "middle",
-      aroma: "clean",
+      texture: "grain",
+      sweetness: "pairing",
+      scene: "curry",
+      impression: "firm",
     },
   },
   {
@@ -90,18 +98,20 @@ const riceBrands = [
     dishes: [
       {
         name: "お寿司",
+        kind: "sushi",
         reason: "粘りが控えめで粒がほぐれやすく、酢飯にしたときに軽く食べられます。",
       },
       {
         name: "和食",
+        kind: "set-meal",
         reason: "あっさりした味わいなので、刺身や煮魚など繊細なおかずに合わせやすいです。",
       },
     ],
     preferences: {
-      sweetness: "low",
-      texture: "firm",
-      stickiness: "light",
-      aroma: "clean",
+      texture: "light",
+      sweetness: "clean",
+      scene: "washoku",
+      impression: "firm",
     },
   },
   {
@@ -111,18 +121,20 @@ const riceBrands = [
     dishes: [
       {
         name: "お弁当",
+        kind: "bento",
         reason: "冷めても柔らかさが残りやすく、時間が経っても食べやすいです。",
       },
       {
         name: "混ぜごはん",
+        kind: "mixed-rice",
         reason: "もちもちした食感が具材とまとまりやすく、満足感が出ます。",
       },
     ],
     preferences: {
-      sweetness: "high",
-      texture: "soft",
-      stickiness: "strong",
-      aroma: "gentle",
+      texture: "mochi",
+      sweetness: "sweet",
+      scene: "bento",
+      impression: "soft",
     },
   },
   {
@@ -132,18 +144,20 @@ const riceBrands = [
     dishes: [
       {
         name: "朝ごはん",
+        kind: "set-meal",
         reason: "重すぎない食べ心地で、焼き魚や納豆のような定番おかずに合わせやすいです。",
       },
       {
         name: "お弁当",
+        kind: "bento",
         reason: "ほどよい甘みがあり、冷めても食べやすいごはんに仕上がりやすいです。",
       },
     ],
     preferences: {
-      sweetness: "middle",
-      texture: "balanced",
-      stickiness: "light",
-      aroma: "gentle",
+      texture: "light",
+      sweetness: "pairing",
+      scene: "bento",
+      impression: "balanced",
     },
   },
   {
@@ -153,18 +167,20 @@ const riceBrands = [
     dishes: [
       {
         name: "和定食",
+        kind: "set-meal",
         reason: "主張が強すぎず、味噌汁や焼き魚などのやさしい味つけとよく合います。",
       },
       {
         name: "おにぎり",
+        kind: "onigiri",
         reason: "ほどよい粘りがあり、ふんわり握ってもまとまりやすいです。",
       },
     ],
     preferences: {
-      sweetness: "middle",
-      texture: "soft",
-      stickiness: "middle",
-      aroma: "clean",
+      texture: "balanced",
+      sweetness: "clean",
+      scene: "washoku",
+      impression: "soft",
     },
   },
   {
@@ -174,84 +190,86 @@ const riceBrands = [
     dishes: [
       {
         name: "肉料理",
+        kind: "meat",
         reason: "しっかりした粒感と甘みがあり、焼肉や生姜焼きのような濃い味にも合います。",
       },
       {
         name: "チャーハン",
+        kind: "fried-rice",
         reason: "大粒で食感が残りやすく、炒めても存在感が出ます。",
       },
     ],
     preferences: {
-      sweetness: "high",
-      texture: "firm",
-      stickiness: "middle",
-      aroma: "rich",
+      texture: "grain",
+      sweetness: "sweet",
+      scene: "curry",
+      impression: "firm",
     },
   },
 ];
 
 const answerLabels = {
-  sweetness: {
-    high: "甘みが強い",
-    middle: "ほどよい甘み",
-    low: "すっきり控えめ",
-  },
   texture: {
-    soft: "柔らかめ",
-    balanced: "ふつう",
+    mochi: "もちもちして甘みがある",
+    grain: "粒が立っていてしっかりしている",
+    light: "あっさり軽く食べられる",
+  },
+  sweetness: {
+    sweet: "ごはん自体の甘みを感じたい",
+    pairing: "おかずに合わせやすい方がいい",
+    clean: "すっきり控えめが好き",
+  },
+  scene: {
+    bento: "おにぎり・お弁当で食べたい",
+    curry: "カレー・丼ものに合わせたい",
+    washoku: "和食・白ごはんとして味わいたい",
+  },
+  impression: {
+    soft: "やわらかい",
+    balanced: "バランス型",
     firm: "かため",
-  },
-  stickiness: {
-    strong: "もっちり粘る",
-    middle: "ほどよい粘り",
-    light: "あっさり軽い",
-  },
-  aroma: {
-    rich: "香りをしっかり感じたい",
-    gentle: "やさしい香りが好き",
-    clean: "クセが少ない方が好き",
   },
 };
 
 const questions = [
   {
-    key: "sweetness",
-    category: "甘さの好み",
-    title: "ごはんの甘みはどれくらいが好きですか？",
-    options: [
-      { value: "high", label: "甘みが強い" },
-      { value: "middle", label: "ほどよい甘み" },
-      { value: "low", label: "すっきり控えめ" },
-    ],
-  },
-  {
     key: "texture",
-    category: "食感の好み",
-    title: "炊きあがりの食感はどれが近いですか？",
+    category: "好きなごはんのタイプ",
+    title: "どんなごはんが好きですか？",
     options: [
-      { value: "soft", label: "柔らかめ" },
-      { value: "balanced", label: "ふつう" },
+      { value: "mochi", label: "もちもちして甘みがある" },
+      { value: "grain", label: "粒が立っていてしっかりしている" },
+      { value: "light", label: "あっさり軽く食べられる" },
+    ],
+  },
+  {
+    key: "sweetness",
+    category: "甘みと合わせ方",
+    title: "ごはんの甘みはどう感じたいですか？",
+    options: [
+      { value: "sweet", label: "ごはん自体の甘みを感じたい" },
+      { value: "pairing", label: "おかずに合わせやすい方がいい" },
+      { value: "clean", label: "すっきり控えめが好き" },
+    ],
+  },
+  {
+    key: "scene",
+    category: "食べる場面",
+    title: "どんな食べ方をすることが多いですか？",
+    options: [
+      { value: "bento", label: "おにぎり・お弁当で食べたい" },
+      { value: "curry", label: "カレー・丼ものに合わせたい" },
+      { value: "washoku", label: "和食・白ごはんとして味わいたい" },
+    ],
+  },
+  {
+    key: "impression",
+    category: "炊きあがりの印象",
+    title: "炊きあがりはどれが好みですか？",
+    options: [
+      { value: "soft", label: "やわらかい" },
+      { value: "balanced", label: "バランス型" },
       { value: "firm", label: "かため" },
-    ],
-  },
-  {
-    key: "stickiness",
-    category: "粘りの好み",
-    title: "粘りはどれくらいほしいですか？",
-    options: [
-      { value: "strong", label: "もっちり粘る" },
-      { value: "middle", label: "ほどよい粘り" },
-      { value: "light", label: "あっさり軽い" },
-    ],
-  },
-  {
-    key: "aroma",
-    category: "香りの好み",
-    title: "香りはどんなタイプが好きですか？",
-    options: [
-      { value: "rich", label: "香りをしっかり感じたい" },
-      { value: "gentle", label: "やさしい香りが好き" },
-      { value: "clean", label: "クセが少ない方が好き" },
     ],
   },
 ];
@@ -358,8 +376,11 @@ function showResult(rice, answers) {
       <div class="dish-list">
         ${rice.dishes.map((dish) => `
           <article class="dish-card">
-            <p class="dish-name">${dish.name}</p>
-            <p class="dish-reason">${dish.reason}</p>
+            <img class="dish-visual" src="assets/dishes/${dish.kind}.png" alt="" aria-hidden="true">
+            <div>
+              <p class="dish-name">${dish.name}</p>
+              <p class="dish-reason">${dish.reason}</p>
+            </div>
           </article>
         `).join("")}
       </div>
